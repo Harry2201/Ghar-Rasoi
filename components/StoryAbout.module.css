@@ -1,0 +1,1137 @@
+.story {
+    --bg: #241914;
+    --paper: #f4eee5;
+    --soft: #b8a99a;
+    --muted: #806f62;
+    --line: rgba(244, 238, 229, 0.15);
+    --accent: #b96845;
+  
+    position: relative;
+    overflow: hidden;
+  
+    background: var(--bg);
+    color: var(--paper);
+  
+    padding: 34px 2.4vw 24px;
+  
+    isolation: isolate;
+  }
+  
+  
+  /* =========================================================
+     BACKGROUND MARK
+  ========================================================= */
+  
+  .backgroundMark {
+    position: absolute;
+  
+    right: -20px;
+    top: 20px;
+  
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+  
+    font-size: clamp(190px, 25vw, 390px);
+  
+    line-height: 0.7;
+  
+    letter-spacing: -0.08em;
+  
+    color: rgba(255, 255, 255, 0.023);
+  
+    pointer-events: none;
+    user-select: none;
+  
+    z-index: -1;
+  }
+  
+  
+  /* =========================================================
+     TOP BAR
+  ========================================================= */
+  
+  .topLine {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    width: 100%;
+  
+    padding-bottom: 13px;
+  
+    border-bottom: 1px solid var(--line);
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 9px;
+    font-weight: 600;
+  
+    letter-spacing: 0.2em;
+  
+    color: var(--soft);
+  }
+  
+  .topLine span:last-child {
+    color: var(--accent);
+  }
+  
+  
+  /* =========================================================
+     MAIN GRID
+  ========================================================= */
+  
+  .storyGrid {
+    display: grid;
+  
+    grid-template-columns:
+      minmax(390px, 0.82fr)
+      minmax(620px, 1.18fr);
+  
+    align-items: start;
+  
+    gap: clamp(35px, 4vw, 70px);
+  
+    width: 100%;
+  
+    max-width: 1580px;
+  
+    margin: 0 auto;
+  
+    padding: 38px 0 52px;
+  }
+  
+  
+  /* =========================================================
+     LEFT COPY
+  ========================================================= */
+  
+  .copy {
+    max-width: 600px;
+  
+    padding-top: 0;
+  
+    opacity: 0;
+  
+    transform: translateY(20px);
+  
+    transition:
+      opacity 0.8s ease,
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .visible .copy {
+    opacity: 1;
+  
+    transform: translateY(0);
+  }
+  
+  
+  .eyebrow {
+    display: flex;
+    align-items: center;
+  
+    gap: 10px;
+  
+    margin-bottom: 23px;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 9px;
+    font-weight: 600;
+  
+    letter-spacing: 0.2em;
+  
+    color: var(--accent);
+  }
+  
+  .eyebrow span {
+    width: 27px;
+    height: 1px;
+  
+    background: var(--accent);
+  }
+  
+  
+  .copy h2 {
+    margin: 0;
+  
+    font-family:
+      var(--font-heading),
+      Georgia,
+      "Times New Roman",
+      serif;
+  
+    font-size: clamp(50px, 5.5vw, 82px);
+  
+    line-height: 0.91;
+  
+    font-weight: 400;
+  
+    letter-spacing: -0.055em;
+  }
+  
+  .copy h2 em {
+    color: #c57955;
+  
+    font-style: italic;
+  }
+  
+  
+  .copy p {
+    max-width: 500px;
+  
+    margin: 22px 0 0;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 14px;
+  
+    line-height: 1.72;
+  
+    color: var(--soft);
+  }
+  
+  .copy .lead {
+    margin-top: 31px;
+  
+    font-size: 15px;
+  
+    line-height: 1.72;
+  
+    color: #e6dcd1;
+  }
+  
+  .copy strong {
+    color: var(--paper);
+  
+    font-weight: 600;
+  }
+  
+  
+  .copy .highlight {
+    position: relative;
+  
+    margin-top: 28px;
+  
+    padding-left: 20px;
+  
+    font-family:
+      var(--font-heading),
+      Georgia,
+      serif;
+  
+    font-size: 20px;
+  
+    line-height: 1.4;
+  
+    color: var(--paper);
+  }
+  
+  .copy .highlight::before {
+    content: "";
+  
+    position: absolute;
+  
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+  
+    width: 2px;
+  
+    background: var(--accent);
+  }
+  
+  
+  /* =========================================================
+     SIGNATURE
+  ========================================================= */
+  
+  .signature {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    gap: 12px;
+  
+    margin-top: 38px;
+  }
+  
+  .signature span {
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+  
+    font-size: 18px;
+  
+    color: #d8c9bb;
+  }
+  
+  .signature i {
+    width: 28px;
+    height: 1px;
+  
+    background: var(--accent);
+  }
+  
+  .signature small {
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 7px;
+  
+    letter-spacing: 0.18em;
+  
+    color: var(--muted);
+  }
+  
+  
+  /* =========================================================
+     VISUAL AREA
+  ========================================================= */
+  
+  .visual {
+    position: relative;
+  
+    height: 610px;
+  
+    width: 100%;
+  }
+  
+  
+  /* =========================================================
+     PRIMARY MUSTARD CARD
+     Reference-inspired treatment
+  ========================================================= */
+  
+  .mustardCard {
+    position: absolute;
+  
+    top: 0;
+    left: 3%;
+  
+    width: min(620px, 76%);
+    height: 370px;
+  
+    /*
+      The orange frame is intentionally part
+      of the card rather than a separate shape.
+    */
+    padding: 9px;
+  
+    background: #fb5b1b;
+  
+    border-radius: 42px;
+  
+    transform:
+      rotate(-6deg)
+      translateY(0);
+  
+    opacity: 0;
+  
+    transition:
+      opacity 0.9s ease 0.08s,
+      transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+  
+    z-index: 2;
+  }
+  
+  .visible .mustardCard {
+    opacity: 1;
+  
+    transform:
+      rotate(-6deg)
+      translateY(0);
+  }
+  
+  
+  .mustardImage {
+    position: relative;
+  
+    width: 100%;
+    height: 100%;
+  
+    overflow: hidden;
+  
+    border-radius: 34px;
+  
+    background: #31231c;
+  }
+  
+  
+  .mustardPhoto {
+    object-fit: cover;
+  
+    object-position: center;
+  
+    transition:
+      transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .mustardCard:hover .mustardPhoto {
+    transform: scale(1.045);
+  }
+  
+  
+  .mustardShade {
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.28)
+      );
+  
+    pointer-events: none;
+  }
+  
+  
+  .mustardText {
+    position: absolute;
+  
+    left: 28px;
+    bottom: 27px;
+  
+    z-index: 3;
+  
+    display: flex;
+    flex-direction: column;
+  
+    gap: 4px;
+  
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.45);
+  }
+  
+  .mustardText span {
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+  
+    font-size: 27px;
+  
+    color: white;
+  }
+  
+  .mustardText small {
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 7px;
+  
+    letter-spacing: 0.17em;
+  
+    color: rgba(255, 255, 255, 0.88);
+  }
+  
+  
+  /* =========================================================
+     FAMILY — CIRCLE
+  ========================================================= */
+  
+  .familyCircle {
+    position: absolute;
+  
+    width: 205px;
+    height: 205px;
+  
+    right: 3%;
+    top: 315px;
+  
+    overflow: hidden;
+  
+    border-radius: 50%;
+  
+    background: #31231c;
+  
+    box-shadow:
+      0 20px 55px rgba(0, 0, 0, 0.3),
+      0 0 0 7px rgba(244, 238, 229, 0.025);
+  
+    opacity: 0;
+  
+    transform: translateY(30px);
+  
+    transition:
+      opacity 0.9s ease 0.25s,
+      transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+  
+    z-index: 5;
+  }
+  
+  .visible .familyCircle {
+    opacity: 1;
+  
+    transform: translateY(0);
+  }
+  
+  
+  .circleImage {
+    object-fit: cover;
+  
+    transition:
+      transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .familyCircle:hover .circleImage {
+    transform: scale(1.06);
+  }
+  
+  
+  .circleBorder {
+    position: absolute;
+  
+    inset: 8px;
+  
+    border: 1px solid rgba(244, 238, 229, 0.28);
+  
+    border-radius: 50%;
+  
+    pointer-events: none;
+  
+    z-index: 3;
+  }
+  
+  
+  .familyLabel {
+    position: absolute;
+  
+    left: 0;
+    right: 0;
+    bottom: 25px;
+  
+    z-index: 4;
+  
+    text-align: center;
+  
+    text-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .familyLabel span {
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 8px;
+    font-weight: 600;
+  
+    letter-spacing: 0.16em;
+  
+    color: white;
+  }
+  
+  
+  /* =========================================================
+     LOCATION
+  ========================================================= */
+  
+  .location {
+    position: absolute;
+  
+    right: 0;
+    bottom: 2px;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 9px;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  }
+  
+  .location span {
+    font-size: 8px;
+    font-weight: 600;
+  
+    letter-spacing: 0.18em;
+  
+    color: #d8cabe;
+  }
+  
+  .location i {
+    width: 23px;
+    height: 1px;
+  
+    background: var(--accent);
+  }
+  
+  .location small {
+    font-size: 6px;
+  
+    letter-spacing: 0.13em;
+  
+    color: var(--muted);
+  }
+  
+  
+  /* =========================================================
+     LOWER STORY
+  ========================================================= */
+  
+  .bottomStory {
+    display: grid;
+  
+    grid-template-columns:
+      1.25fr
+      1fr
+      0.95fr;
+  
+    gap: 35px;
+  
+    width: 100%;
+  
+    max-width: 1580px;
+  
+    margin: 0 auto;
+  
+    padding: 32px 0;
+  
+    border-top: 1px solid var(--line);
+  }
+  
+  
+  /* =========================================================
+     FOUNDER BLOCK
+  ========================================================= */
+  
+  .founderBlock {
+    display: grid;
+  
+    grid-template-columns: 175px 1fr;
+  
+    align-items: center;
+  
+    gap: 28px;
+  }
+  
+  
+  .founderPhoto {
+    position: relative;
+  
+    width: 175px;
+    height: 175px;
+  
+    overflow: hidden;
+  
+    border-radius: 50%;
+  
+    background: #31231c;
+  
+    box-shadow:
+      0 16px 40px rgba(0, 0, 0, 0.25),
+      0 0 0 6px rgba(244, 238, 229, 0.025);
+  
+    animation:
+      founderFloat 5.5s ease-in-out infinite;
+  }
+  
+  @keyframes founderFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-7px);
+    }
+  }
+  
+  
+  .founderImage {
+    object-fit: cover;
+  
+    object-position: center top;
+  
+    transition:
+      transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .founderPhoto:hover .founderImage {
+    transform: scale(1.06);
+  }
+  
+  
+  .founderShade {
+    position: absolute;
+  
+    inset: 0;
+  
+    background:
+      linear-gradient(
+        transparent 45%,
+        rgba(18, 11, 7, 0.8)
+      );
+  
+    pointer-events: none;
+  }
+  
+  
+  .founderName {
+    position: absolute;
+  
+    left: 0;
+    right: 0;
+    bottom: 20px;
+  
+    z-index: 3;
+  
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+  
+    gap: 3px;
+  
+    text-align: center;
+  }
+  
+  .founderName span {
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 8px;
+    font-weight: 600;
+  
+    letter-spacing: 0.14em;
+  
+    color: white;
+  }
+  
+  .founderName small {
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 5.5px;
+  
+    letter-spacing: 0.1em;
+  
+    color: rgba(255, 255, 255, 0.72);
+  }
+  
+  
+  /* =========================================================
+     FOUNDER STORY
+  ========================================================= */
+  
+  .founderStory {
+    max-width: 370px;
+  }
+  
+  .blockLabel,
+  .promise > span,
+  .vision > span {
+    display: block;
+  
+    margin-bottom: 13px;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 7px;
+  
+    font-weight: 600;
+  
+    letter-spacing: 0.18em;
+  
+    color: var(--muted);
+  }
+  
+  .founderStory p {
+    margin: 0 0 12px;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 12px;
+  
+    line-height: 1.75;
+  
+    color: var(--soft);
+  }
+  
+  .founderStory strong {
+    color: var(--paper);
+  
+    font-weight: 600;
+  }
+  
+  
+  /* =========================================================
+     OUR BELIEF
+  ========================================================= */
+  
+  .promise {
+    padding-left: 28px;
+  
+    border-left: 1px solid var(--line);
+  }
+  
+  .promise blockquote {
+    margin: 0;
+  
+    font-family:
+      Georgia,
+      "Times New Roman",
+      serif;
+  
+    font-size: 19px;
+  
+    line-height: 1.4;
+  
+    color: #e8ddd3;
+  }
+  
+  
+  /* =========================================================
+     LOOKING AHEAD
+  ========================================================= */
+  
+  .vision {
+    padding-left: 5px;
+  }
+  
+  .vision p {
+    margin: 0;
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 12px;
+  
+    line-height: 1.75;
+  
+    color: var(--soft);
+  }
+  
+  .vision strong {
+    color: var(--paper);
+  }
+  
+  
+  /* =========================================================
+     FOOTER
+  ========================================================= */
+  
+  .footerLine {
+    display: flex;
+    justify-content: space-between;
+  
+    width: 100%;
+  
+    max-width: 1580px;
+  
+    margin: 0 auto;
+  
+    padding-top: 12px;
+  
+    border-top: 1px solid var(--line);
+  
+    font-family: var(--font-body), Arial, sans-serif;
+  
+    font-size: 7px;
+    font-weight: 600;
+  
+    letter-spacing: 0.2em;
+  
+    color: var(--muted);
+  }
+  
+  .footerLine span:last-child {
+    color: var(--accent);
+  }
+  
+  
+  /* =========================================================
+     TABLET
+  ========================================================= */
+  
+  @media (max-width: 1100px) {
+  
+    .story {
+      padding-left: 3vw;
+      padding-right: 3vw;
+    }
+  
+    .storyGrid {
+      grid-template-columns:
+        minmax(320px, 0.85fr)
+        minmax(500px, 1.15fr);
+  
+      gap: 35px;
+    }
+  
+    .copy h2 {
+      font-size: clamp(48px, 6vw, 70px);
+    }
+  
+    .visual {
+      height: 570px;
+    }
+  
+    .mustardCard {
+      width: 72%;
+      height: 330px;
+    }
+  
+    .familyCircle {
+      width: 185px;
+      height: 185px;
+  
+      top: 280px;
+    }
+  
+    .founderBlock {
+      grid-template-columns: 145px 1fr;
+    }
+  
+    .founderPhoto {
+      width: 145px;
+      height: 145px;
+    }
+  }
+  
+  
+  /* =========================================================
+     MOBILE
+  ========================================================= */
+  
+  @media (max-width: 760px) {
+  
+    .story {
+      padding: 38px 18px 22px;
+    }
+  
+    .backgroundMark {
+      right: -15px;
+      top: 45px;
+  
+      font-size: 190px;
+    }
+  
+    .storyGrid {
+      display: block;
+  
+      padding: 42px 0 48px;
+    }
+  
+    .copy {
+      max-width: none;
+    }
+  
+    .copy h2 {
+      font-size: clamp(48px, 14vw, 70px);
+    }
+  
+  
+    /* ================================================
+       MOBILE VISUAL
+    ================================================ */
+  
+    .visual {
+      height: 680px;
+  
+      margin-top: 55px;
+    }
+  
+    .mustardCard {
+      top: 0;
+      left: 3%;
+  
+      width: 88%;
+      height: 285px;
+  
+      padding: 7px;
+  
+      border-radius: 32px;
+  
+      transform: rotate(-5deg);
+    }
+  
+    .mustardImage {
+      border-radius: 26px;
+    }
+  
+    .mustardText {
+      left: 22px;
+      bottom: 22px;
+    }
+  
+    .mustardText span {
+      font-size: 22px;
+    }
+  
+    .familyCircle {
+      width: 175px;
+      height: 175px;
+  
+      top: 245px;
+      right: 1%;
+    }
+  
+    .location {
+      right: 0;
+      bottom: 0;
+  
+      flex-direction: column;
+      align-items: flex-end;
+  
+      gap: 4px;
+    }
+  
+    .location i {
+      display: none;
+    }
+  
+  
+    /* ================================================
+       MOBILE FOUNDER
+    ================================================ */
+  
+    .bottomStory {
+      display: grid;
+  
+      grid-template-columns: 1fr;
+  
+      gap: 32px;
+  
+      padding: 35px 0;
+    }
+  
+    .founderBlock {
+      display: grid;
+  
+      grid-template-columns: 150px 1fr;
+  
+      align-items: center;
+  
+      gap: 22px;
+    }
+  
+    .founderPhoto {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .promise {
+      padding-left: 18px;
+    }
+  
+    .vision {
+      padding-left: 0;
+    }
+  }
+  
+  
+  /* =========================================================
+     SMALL MOBILE
+  ========================================================= */
+  
+  @media (max-width: 480px) {
+  
+    .story {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  
+    .topLine {
+      font-size: 8px;
+    }
+  
+    .eyebrow {
+      margin-bottom: 20px;
+  
+      font-size: 8px;
+    }
+  
+    .copy h2 {
+      font-size: 47px;
+    }
+  
+    .copy p {
+      font-size: 13px;
+    }
+  
+    .copy .highlight {
+      font-size: 18px;
+    }
+  
+    .visual {
+      height: 620px;
+    }
+  
+    .mustardCard {
+      width: 91%;
+      height: 245px;
+  
+      border-radius: 27px;
+    }
+  
+    .mustardImage {
+      border-radius: 21px;
+    }
+  
+    .fieldLabel {
+      bottom: 20px;
+    }
+  
+    .mustardText span {
+      font-size: 19px;
+    }
+  
+    .familyCircle {
+      width: 150px;
+      height: 150px;
+  
+      top: 210px;
+    }
+  
+    .founderBlock {
+      grid-template-columns: 125px 1fr;
+  
+      gap: 17px;
+    }
+  
+    .founderPhoto {
+      width: 125px;
+      height: 125px;
+    }
+  
+    .founderStory p {
+      font-size: 11px;
+    }
+  
+    .promise blockquote {
+      font-size: 18px;
+    }
+  
+    .footerLine {
+      letter-spacing: 0.12em;
+    }
+  }
+  
+  
+  /* =========================================================
+     REDUCED MOTION
+  ========================================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    .copy,
+    .mustardCard,
+    .familyCircle,
+    .founderPhoto,
+    .mustardPhoto,
+    .circleImage,
+    .founderImage {
+      transition: none !important;
+    }
+  
+    .founderPhoto {
+      animation: none !important;
+    }
+  
+    .copy,
+    .mustardCard,
+    .familyCircle {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
