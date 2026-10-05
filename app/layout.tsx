@@ -8,14 +8,41 @@ export const metadata: Metadata = {
     default: "Ghar Rasoi Enterprises — शुद्धता की एक पहचान",
     template: "%s | Ghar Rasoi Enterprises",
   },
+
   description:
-    "Ghar Rasoi Enterprises — oils, masalas and grains from Varanasi, Uttar Pradesh.",
+    "Ghar Rasoi Enterprises — mustard oil, cooking oils, masalas and atta from Varanasi, Uttar Pradesh.",
+
+  keywords: [
+    "Ghar Rasoi Enterprises",
+    "Ghar Rasoi",
+    "mustard oil",
+    "cold pressed mustard oil",
+    "mustard oil Varanasi",
+    "masala",
+    "atta",
+    "cooking oil",
+    "Varanasi",
+    "Uttar Pradesh",
+  ],
+
+  authors: [{ name: "Ghar Rasoi Enterprises" }],
+
+  creator: "Ghar Rasoi Enterprises",
+
+  metadataBase: new URL("https://theexactdomain.com"),
+
   openGraph: {
     title: "Ghar Rasoi Enterprises — शुद्धता की एक पहचान",
     description:
-      "Oils, masalas and grains from a Varanasi kitchen brand rooted in family farming.",
+      "Mustard oil, cooking oils, masalas and atta from Ghar Rasoi Enterprises, Varanasi.",
     locale: "en_IN",
     type: "website",
+    siteName: "Ghar Rasoi Enterprises",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

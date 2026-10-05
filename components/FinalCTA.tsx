@@ -74,7 +74,7 @@ export default function FinalCTA() {
           <div className={styles.productFrame}>
             <div className={styles.productImageWrap}>
               <Image
-                src="/images/products/mustard-oil.png"
+                src="/images/products/oil/mustard-oil-front-removebg.png"
                 alt="Ghar Rasoi Mustard Oil"
                 fill
                 sizes="(max-width: 760px) 72vw, 34vw"

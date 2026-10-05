@@ -569,55 +569,37 @@ section {
    HERO
 ========================================================= */
 
+/* =========================================================
+   HERO
+========================================================= */
+
 .hero {
   position: relative;
-
   min-height: 100svh;
-
   overflow: hidden;
-
   background: #2b1b13;
-
   display: flex;
-
   align-items: center;
 }
 
-.hero-media,
-.hero-poster,
-.hero-video {
+/* Hero image */
+.hero-media {
   position: absolute;
-
   inset: 0;
 
   width: 100%;
   height: 100%;
 
-  object-fit: cover;
-}
-
-.hero-video {
-  z-index: 1;
-
-  opacity: 0;
-
-  transition: opacity 0.6s ease;
-}
-
-.hero-video.ready {
-  opacity: 1;
-}
-
-.hero-poster {
-  z-index: 0;
-
-  background-position: center;
   background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  z-index: 0;
 }
 
+/* Desktop overlay */
 .hero-overlay {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -632,16 +614,93 @@ section {
     );
 }
 
+/* Hero content */
 .hero-content {
   position: relative;
-
   z-index: 3;
 
   width: min(620px, 48vw);
 
   margin-left: 7vw;
-
   padding-top: 8vh;
+}
+
+
+/* =========================================================
+   MOBILE HERO
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+
+    align-items: flex-start;
+  }
+
+  .hero-media {
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-size: auto 100%;
+    background-position: 72% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(244, 238, 229, 0.98) 0%,
+        rgba(244, 238, 229, 0.90) 42%,
+        rgba(244, 238, 229, 0.55) 70%,
+        rgba(43, 27, 19, 0.12) 100%
+      );
+  }
+
+  .hero-content {
+    width: auto;
+    max-width: none;
+
+    margin: 0 6vw;
+
+    padding-top: 25vh;
+  }
+
+  h1 {
+    font-size: clamp(48px, 13vw, 58px);
+
+    line-height: 0.94;
+
+    margin: 16px 0 22px;
+  }
+
+  .hero-copy {
+    max-width: 300px;
+
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin-top: 25px;
+  }
+
+  .hero-tag {
+    margin-top: 30px;
+
+    font-size: 15px;
+  }
+
+  .hero-side-note {
+    display: none;
+  }
 }
 
 
@@ -1698,13 +1757,21 @@ footer strong {
     width: 100%;
     height: 100%;
   
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center center;
   
-    transform: scale(1.025);
+    padding: 18px;
+    box-sizing: border-box;
+  
+    transform: scale(1);
   
     transition:
-      transform 1.1s
-        cubic-bezier(0.16, 1, 0.3, 1);
+      transform 0.8s
+        cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .depth-card.is-active .depth-image {
+    transform: scale(1);
   }
   
   .depth-card[data-position="0"]
@@ -4675,9 +4742,14 @@ footer strong {
 }
 
 .product-detail-similar-image img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  object-position: center center;
+  padding: 12px;
+  box-sizing: border-box;
 }
 
 .product-detail-similar-card small {
@@ -5962,4 +6034,333 @@ footer strong {
 
     transition: none;
   }
+}
+/* =====================================================
+   PRODUCT IMAGE FIT
+===================================================== */
+
+/* Product catalogue cards */
+.product-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: #e9ddcf;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+/* Modern catalogue cards */
+.catalog-card-image {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catalog-card-image img,
+.catalog-card-photo {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 10px;
+  box-sizing: border-box;
+}
+/* =========================================================
+   GHAR RASOI — FINAL PRODUCT IMAGE FIX
+========================================================= */
+
+/* ---------------------------------------------------------
+   1. PRODUCT CATALOG CARDS
+--------------------------------------------------------- */
+
+.catalog-card-image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 0.88;
+
+  overflow: hidden;
+
+  background: #e7ddd1;
+
+  border: 1px solid rgba(45, 33, 27, 0.10);
+
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+ * IMPORTANT:
+ * Product packaging must remain completely visible.
+ * Do NOT use object-fit: cover here.
+ */
+.catalog-card-image img,
+.catalog-card-photo {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  display: block;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Very subtle hover — no ugly zoom/cropping */
+.catalog-card-image:hover img,
+.catalog-card-image:hover .catalog-card-photo {
+  transform: scale(1.025);
+}
+
+
+/* ---------------------------------------------------------
+   2. PRODUCT DETAIL / 3D FEATURED CAROUSEL
+--------------------------------------------------------- */
+
+.depth-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  /*
+   * Show the COMPLETE product.
+   * The old cover value was cropping the packaging.
+   */
+  object-fit: contain;
+  object-position: center center;
+
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  transform: scale(1);
+
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Active product */
+.depth-card.is-active .depth-image {
+  transform: scale(1);
+}
+
+/* Slightly larger active product */
+.depth-card[data-position="0"] .depth-image {
+  transform: scale(1.02);
+}
+
+
+/* ---------------------------------------------------------
+   3. PRODUCT DETAIL NORMAL GALLERY
+--------------------------------------------------------- */
+
+.product-detail-gallery-main {
+  position: relative;
+
+  min-height: 420px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #efe6da;
+}
+
+.product-detail-gallery-main img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 420px;
+
+  object-fit: contain;
+  object-position: center center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   4. SIMILAR PRODUCTS
+--------------------------------------------------------- */
+
+.product-detail-similar-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 220px;
+
+  margin-bottom: 14px;
+
+  background: #efe6da;
+
+  overflow: hidden;
+}
+
+.product-detail-similar-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  padding: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   5. CART PRODUCT IMAGE
+--------------------------------------------------------- */
+
+.cart-row-image {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 112px;
+  height: 112px;
+
+  background: #efe6da;
+
+  overflow: hidden;
+}
+
+.cart-row-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center center;
+
+  padding: 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   6. CART IMAGE — MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 760px) {
+
+  .cart-row-image {
+    width: 88px;
+    height: 88px;
+  }
+
+  .cart-row-image img {
+    padding: 6px;
+  }
+
+  .product-detail-gallery-main {
+    min-height: 320px;
+  }
+
+  .product-detail-gallery-main img {
+    min-height: 320px;
+
+    padding: 14px;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   7. PRODUCT CATALOG — MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .catalog-card-image {
+    aspect-ratio: 0.82;
+  }
+
+  .catalog-card-image img,
+  .catalog-card-photo {
+    padding: 8px;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   8. REMOVE OLD IMAGE ZOOM BEHAVIOUR
+--------------------------------------------------------- */
+
+.catalog-card-image:hover img {
+  transform: scale(1.025);
+}
+
+
+/* ---------------------------------------------------------
+   9. PLACEHOLDER
+--------------------------------------------------------- */
+
+.catalog-image-placeholder,
+.product-detail-gallery-empty {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(184, 95, 61, 0.10),
+      transparent 35%
+    ),
+    #e7ddd1;
+
+  color: rgba(45, 33, 27, 0.42);
+
+  font-family: Georgia, serif;
+
+  font-size: 17px;
+
+  font-style: italic;
 }

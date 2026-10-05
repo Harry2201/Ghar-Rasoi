@@ -77,7 +77,7 @@ export default function FeaturedProducts() {
                   aria-hidden={position !== 0}
                 >
                   <img
-                    src={item.image}
+                    src={item.images.front ?? ""}
                     alt={item.name}
                     onError={(event) => {
                       event.currentTarget.style.display = "none";

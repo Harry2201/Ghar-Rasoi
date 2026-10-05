@@ -150,6 +150,8 @@ export default function Footer() {
                 onSubmit={handleSubscribe}
               >
                 <input
+                  id="newsletter-email"
+                  name="email"
                   type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
@@ -159,9 +161,7 @@ export default function Footer() {
                   required
                 />
 
-                <button type="submit">
-                  SUBSCRIBE
-                </button>
+                <button type="submit">SUBSCRIBE</button>
               </form>
             </>
           ) : (
@@ -186,17 +186,11 @@ export default function Footer() {
       ================================================= */}
 
       <div className={styles.bottomBar}>
-        <span>
-          © 2026 GHAR RASOI ENTERPRISES
-        </span>
+        <span>© 2026 GHAR RASOI ENTERPRISES</span>
 
-        <span className={styles.hindi}>
-          शुद्धता की एक पहचान
-        </span>
+        <span className={styles.hindi}>शुद्धता की एक पहचान</span>
 
-        <span>
-          VARANASI · UTTAR PRADESH
-        </span>
+        <span>VARANASI · UTTAR PRADESH</span>
       </div>
     </footer>
   );

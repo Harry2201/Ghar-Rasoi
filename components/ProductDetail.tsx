@@ -12,7 +12,9 @@ export default function ProductDetail({
   product: Product;
   relatedProducts: Product[];
 }) {
-  const images = product.image ? [product.image] : [];
+  const images = [product.images.front, product.images.back].filter(
+    (image): image is string => Boolean(image)
+  );
   const variants = product.variants ?? [];
   const hasInfo = Boolean(
     product.description ||

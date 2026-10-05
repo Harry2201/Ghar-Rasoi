@@ -7,10 +7,16 @@ import Reveal from "./Reveal";
 export default function SimilarProducts({ products }: { products: Product[] }) {
   if (products.length === 0) return null;
   return (
-    <section className="product-detail-similar" aria-labelledby="pd-similar-title">
+    <section
+      className="product-detail-similar"
+      aria-labelledby="pd-similar-title"
+    >
       <Reveal>
         <div className="product-detail-section-head">
-          <span className="product-detail-kicker"><i />EXPLORE MORE</span>
+          <span className="product-detail-kicker">
+            <i />
+            EXPLORE MORE
+          </span>
           <h2 id="pd-similar-title">You may also like</h2>
         </div>
       </Reveal>
@@ -18,14 +24,23 @@ export default function SimilarProducts({ products }: { products: Product[] }) {
         {products.map((item, index) => (
           <li key={item.id}>
             <Reveal delay={index * 70}>
-              <Link href={`/products/${item.slug}`} className="product-detail-similar-card">
+              <Link
+                href={`/products/${item.slug}`}
+                className="product-detail-similar-card"
+              >
                 <span className="product-detail-similar-image">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    loading="lazy"
-                    onError={(event) => { event.currentTarget.style.display = "none"; }}
-                  />
+                  {item.images.front ? (
+                    <img
+                      src={item.images.front}
+                      alt={item.name}
+                      loading="lazy"
+                      onError={(event) => {
+                        event.currentTarget.style.display = "none";
+                      }}
+                    />
+                  ) : (
+                    <span aria-hidden="true" />
+                  )}
                 </span>
                 <small>{item.category}</small>
                 <strong>{item.name}</strong>

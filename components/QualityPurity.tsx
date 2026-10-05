@@ -87,7 +87,7 @@ export default function QualityPurity() {
           <div className="quality-product">
 
             <Image
-              src="/images/products/mustard-oil.png"
+              src="/images/products/oil/mustard-oil-front-removebg.png"
               alt="Ghar Rasoi Mustard Oil"
               fill
               sizes="(max-width: 900px) 70vw, 35vw"

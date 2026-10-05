@@ -1,6 +1,8 @@
+import ProductSchema from "../../../components/ProductSchema";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ProductDetail from "../../../components/ProductDetail";
+import BreadcrumbSchema from "../../../components/BreadcrumbSchema";
 import {
   getProductBySlug,
   getRelatedProducts,
@@ -39,6 +41,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <main className="product-detail-page">
+      <ProductSchema product={product} />
+      <BreadcrumbSchema product={product} />
       <ProductDetail
         product={product}
         relatedProducts={getRelatedProducts(product)}

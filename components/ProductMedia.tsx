@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { resolvedProductImage, type Product } from "../lib/products";
+import type { Product } from "../lib/products";
 
 type ProductMediaProps = {
-  product: Pick<Product, "name" | "image">;
+  product: Pick<Product, "name" | "images">;
   fill?: boolean;
   width?: number;
   height?: number;
@@ -24,7 +24,7 @@ export default function ProductMedia({
   alt,
   fallbackClassName = "catalog-image-placeholder",
 }: ProductMediaProps) {
-  const src = resolvedProductImage(product.image);
+  const src = product.images.front;
   const label = alt ?? product.name;
 
   if (!src) {

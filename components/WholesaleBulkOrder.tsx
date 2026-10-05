@@ -118,32 +118,44 @@ export default function WholesaleBulkOrder() {
               PRODUCT VISUAL
           ================================================== */}
 
-          <div className={styles.visual}>
+<div className={styles.visual}>
 
-            <div className={styles.visualGlow} />
+<div
+  className={styles.visualGlow}
+  aria-hidden="true"
+/>
 
-            <div className={styles.productCircle}>
-              <div className={styles.productCircleInner}>
-                <Image
-                  src="/images/products/mustard-oil.png"
-                  alt="Ghar Rasoi Mustard Oil"
-                  fill
-                  sizes="(max-width: 760px) 65vw, 32vw"
-                  className={styles.productImage}
-                />
-              </div>
-            </div>
+<div
+  className={`${styles.editorialRing} ${styles.editorialRingOne}`}
+  aria-hidden="true"
+/>
 
-            <div className={styles.visualLabel}>
-              <span>GHAR RASOI</span>
-              <small>MUSTARD OIL</small>
-            </div>
+<div
+  className={`${styles.editorialRing} ${styles.editorialRingTwo}`}
+  aria-hidden="true"
+/>
 
-            <div className={styles.visualNumber}>
-              01
-            </div>
+<div className={styles.productStage}>
+  <Image
+    src="/images/products/oil/mustard-oil-front-removebg.png"
+    alt="Ghar Rasoi Mustard Oil"
+    width={560}
+    height={760}
+    className={styles.productImage}
+  />
 
-          </div>
+  <div
+    className={styles.productShadow}
+    aria-hidden="true"
+  />
+</div>
+
+<div className={styles.visualLabel}>
+  <span>GHAR RASOI</span>
+  <small>MUSTARD OIL</small>
+</div>
+
+</div>
 
         </div>
 
