@@ -163,7 +163,7 @@ export const products: Product[] = [
     category: "Masalas",
 
     images: {
-      front: "/images/products/masalas/hladi-powder-front.webp",
+      front: "/images/products/masalas/haldi-powder-front.webp",
       back: "/images/products/masalas/haldi-powder-back.webp",
     },
 
