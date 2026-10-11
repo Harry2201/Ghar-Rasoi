@@ -30,7 +30,7 @@ export default function CartView() {
 
   const subtotal = pricedSubtotal(items);
   const hasUnpriced = items.some(
-    (item) => typeof item.price !== "number" || !Number.isFinite(item.price)
+    (item) => typeof item.price !== "number" || !Number.isFinite(item.price),
   );
 
   return (
@@ -70,12 +70,22 @@ export default function CartView() {
                   >
                     <img
                       src={item.image}
-                      alt=""
+                      alt={item.name}
                       onError={(event) => {
                         event.currentTarget.style.display = "none";
+                        const placeholder = event.currentTarget
+                          .nextElementSibling as HTMLElement | null;
+                        if (placeholder) {
+                          placeholder.style.display = "grid";
+                        }
                       }}
                     />
-                    <span className="catalog-image-placeholder">Image coming soon</span>
+                    <span
+                      className="catalog-image-placeholder"
+                      style={{ display: "none" }}
+                    >
+                      Image coming soon
+                    </span>
                   </Link>
 
                   <div className="cart-row-copy">
@@ -87,12 +97,18 @@ export default function CartView() {
                   </div>
 
                   <div className="cart-row-actions">
-                    <div className="product-detail-qty" role="group" aria-label={`${item.name} quantity`}>
+                    <div
+                      className="product-detail-qty"
+                      role="group"
+                      aria-label={`${item.name} quantity`}
+                    >
                       <button
                         type="button"
                         aria-label={`Decrease ${item.name} quantity`}
                         disabled={item.quantity <= 1}
-                        onClick={() => setCartQuantity(item.id, item.quantity - 1)}
+                        onClick={() =>
+                          setCartQuantity(item.id, item.quantity - 1)
+                        }
                       >
                         −
                       </button>
@@ -101,7 +117,9 @@ export default function CartView() {
                         type="button"
                         aria-label={`Increase ${item.name} quantity`}
                         disabled={item.quantity >= 99}
-                        onClick={() => setCartQuantity(item.id, item.quantity + 1)}
+                        onClick={() =>
+                          setCartQuantity(item.id, item.quantity + 1)
+                        }
                       >
                         +
                       </button>
@@ -123,13 +141,21 @@ export default function CartView() {
             <h2>Summary</h2>
             <div className="cart-summary-row">
               <span>Subtotal</span>
-              <strong>{subtotal !== null ? formatPrice(subtotal) : "Price on request"}</strong>
+              <strong>
+                {subtotal !== null ? formatPrice(subtotal) : "Price on request"}
+              </strong>
             </div>
             {hasUnpriced && (
               <p>Pack sizes and prices will be confirmed before payment.</p>
             )}
-            <p>Online checkout is not available yet. Enquire from a product page when WhatsApp is configured.</p>
-            <Link href="/products" className="product-detail-btn secondary cart-continue">
+            <p>
+              Online checkout is not available yet. Enquire from a product page
+              when WhatsApp is configured.
+            </p>
+            <Link
+              href="/products"
+              className="product-detail-btn secondary cart-continue"
+            >
               Continue browsing
             </Link>
           </aside>
