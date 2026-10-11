@@ -551,8 +551,8 @@ export const products: Product[] = [
     category: "Grains & Millets",
 
     images: {
-      front: null,
-      back: null,
+      front: "/images/products/aata/rice-aata-front.webp",
+      back: "/images/products/aata/rice-aata-back.webp",
     },
 
     shortDescription:
