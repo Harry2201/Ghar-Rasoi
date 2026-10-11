@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
   creator: "Ghar Rasoi Enterprises",
 
-  metadataBase: new URL("https://theexactdomain.com"),
+  metadataBase: new URL("https://gharrasoi.in"),
 
   openGraph: {
     title: "Ghar Rasoi Enterprises — शुद्धता की एक पहचान",

@@ -7,7 +7,7 @@ type ProductSchemaProps = {
 export default function ProductSchema({
   product,
 }: ProductSchemaProps) {
-  const productUrl = `https://gharrasoi.com/products/${product.slug}`;
+  const productUrl = `https://gharrasoi.in/products/${product.slug}`;
 
   const images = [
     product.images.front,
@@ -34,7 +34,7 @@ export default function ProductSchema({
     name: product.name,
     description: product.description ?? product.shortDescription,
     image: images.map(
-      (image) => `https://gharrasoi.com${image}`
+      (image) => `https://gharrasoi.in${image}`
     ),
     url: productUrl,
     brand: {

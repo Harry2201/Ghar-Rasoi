@@ -2,10 +2,10 @@ export default function OrganizationSchema() {
     const organization = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "@id": "https://gharrasoi.com/#organization",
+      "@id": "https://gharrasoi.in/#organization",
       name: "Ghar Rasoi Enterprises",
-      url: "https://gharrasoi.com",
-      logo: "https://gharrasoi.com/images/ghar-rasoi-logo.png",
+      url: "https://gharrasoi.in",
+      logo: "https://gharrasoi.in/images/ghar-rasoi-logo.png",
       description:
         "Ghar Rasoi Enterprises is a Varanasi-based food brand offering mustard oil, cooking oils, masalas and atta, with a focus on quality, traditional food values and everyday Indian cooking.",
       slogan: "शुद्धता की एक पहचान",

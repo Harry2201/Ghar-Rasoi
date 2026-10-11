@@ -7,7 +7,7 @@ type BreadcrumbSchemaProps = {
 export default function BreadcrumbSchema({
   product,
 }: BreadcrumbSchemaProps) {
-  const productUrl = `https://gharrasoi.com/products/${product.slug}`;
+  const productUrl = `https://gharrasoi.in/products/${product.slug}`;
 
   const schema = {
     "@context": "https://schema.org",
@@ -17,19 +17,19 @@ export default function BreadcrumbSchema({
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://gharrasoi.com/",
+        item: "https://gharrasoi.in/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Products",
-        item: "https://gharrasoi.com/products",
+        item: "https://gharrasoi.in/products",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: product.category,
-        item: `https://gharrasoi.com/products?category=${encodeURIComponent(
+        item: `https://gharrasoi.in/products?category=${encodeURIComponent(
           product.category === "Grains & Millets"
             ? "grains"
             : product.category.toLowerCase()
